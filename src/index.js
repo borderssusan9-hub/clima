@@ -2,11 +2,34 @@ function displayClimaCondition(response) {
     let temperatureElement = document.querySelector("#temperature");
     let temperature = response.data.temperature.current;
     let cityElement = document.querySelector("#city");
-     cityElement.innerHTML = response.data.city;
-    temperatureElement.innerHTML = Math.round(temperature);}
-    
-  
+     let descriptionElement = document.querySelector("#description");
+    let humidityElement = document.querySelector("#humidity");
+let windSpeedElement = document.querySelector("#wind-speed");
+let timeElement = document.querySelector("#time");
+let date = new Date(response.data.time * 1000);
 
+    
+timeElement.innerHTML = formatDate(date);
+    cityElement.innerHTML = response.data.city;
+    temperatureElement.innerHTML = Math.round(temperature);
+    descriptionElement.innerHTML = response.data.condition.description;
+    humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
+    
+    windSpeedElement.innerHTML = `${response.data.wind.speed} km/h`;
+    
+
+}
+
+function formatDate(date) {
+    
+    let minutes = date.getMinutes();
+    let hours = date.getHours();
+    let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    let day = days[date.getDay()];
+    if (minutes < 10) { minutes = `0${minutes}`; }
+    if (hours < 10) { hours = `0${hours}`; }    
+    return `${day} ${hours}:${minutes}`;
+}
 
 function searchCity(city) {
     let apiKey = "406a75450d5d3330f1t1d188ef66ofb8";
