@@ -55,18 +55,18 @@ footer {
         display: flex;
     }
     .clima-app-icon {
-        font-size: 44px;
-        margin-top: 22px;
+        width: 88px;
+        height: 88px;
     }
     .clima-app-temperature {
         font-size: 88px;
         font-weight: bold;
-        color: 212121;
-        margin-left: 10px;
+        color: #212121;
+        line-height: 88px;
         }
         .clima-app-unit {
             font-size: 28px;
-            margin-top: 16px;
+            margin-top: 6px;
         }
 .search-form-input {
     background-color: #f9f7fe;
