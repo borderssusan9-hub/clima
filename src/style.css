@@ -89,8 +89,10 @@ font-weight: bold; }
       margin-bottom: 10px;
   }
            .clima-forecast-icon {
-               font-size: 38px;
-               text-align: center;
+               width: 88px;
+               height: 88px;
+               display: block;
+               margin: 0 auto;
            }
 .clima-forecast-temperatures {
     text-align: center;
